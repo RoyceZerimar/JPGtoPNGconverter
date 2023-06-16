@@ -12,12 +12,12 @@ elif len(sys.argv) < 2:
     print("Please provide at least one folder as a command-line argument")
     sys.exit(1)
 
-# checking to see if folder1  exist
-folder1 = sys.argv[1]
-if not os.path.isdir(folder1):
-    print(f"folder 1 does not exist: {folder1}")
+# checking to see if input_folder exist
+input_folder = sys.argv[1]
+if not os.path.isdir(input_folder):
+    print(f"folder 1 does not exist: {input_folder}")
     sys.exit(1)
-print(f'Folder1: {folder1}')
+print(f'input_folder: {input_folder}')
 
 # checking to see if the user provided a second folder
 if len(sys.argv) == 3:
@@ -39,9 +39,9 @@ elif len(sys.argv) == 2:  # creating a new folder if a second folder is not prov
 
 # 3 loop through fist folder then convert to png and add them to the new folder
 
-for file_name in os.listdir(folder1):
+for file_name in os.listdir(input_folder):
     if file_name.endswith(".jpg"):
-        image_path = os.path.join(folder1, file_name)
+        image_path = os.path.join(input_folder, file_name)
 
         img = Image.open(image_path)
         img.show()
