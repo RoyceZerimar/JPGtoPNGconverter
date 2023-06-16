@@ -41,9 +41,9 @@ elif len(sys.argv) == 2:  # creating a new folder if a second folder is not prov
 
 for file_name in os.listdir(input_folder):
     if file_name.endswith(".jpg"):
-        image_path = os.path.join(input_folder, file_name)
+        image = Image.open(os.path.join(input_folder, file_name))
 
-        img = Image.open(image_path)
-        img.show()
-        break
+        new_filename = os.path.splitext(file_name)[0] + '.png'
+        image.save(os.path.join(folder2, new_filename))
+
 #  python3 JPGtoPNGconverter.py Pokedex
