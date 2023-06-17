@@ -46,4 +46,4 @@ for file_name in os.listdir(input_folder):
         new_filename = os.path.splitext(file_name)[0] + '.png'
         image.save(os.path.join(output_folder, new_filename))
 
-#  python3 JPGtoPNGconverter.py Pokedex
+#  use this line to run the program in the termina:  python3 JPGtoPNGconverter.py Pokedex ImageFolder
