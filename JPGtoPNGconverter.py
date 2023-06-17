@@ -21,20 +21,20 @@ print(f'input_folder: {input_folder}')
 
 # checking to see if the user provided a second folder
 if len(sys.argv) == 3:
-    folder2 = sys.argv[2]
+    output_folder = sys.argv[2]
     # 2 check if second folder exist if not creat the folder
-    if not os.path.isdir(folder2):
-        print(f"creating new folder: {folder2}")
-        os.makedirs(folder2)
-    print(f"Folder2: {folder2}")
+    if not os.path.isdir(output_folder):
+        print(f"creating new folder: {output_folder}")
+        os.makedirs(output_folder)
+    print(f"output_folder: {output_folder}")
 
 
 elif len(sys.argv) == 2:  # creating a new folder if a second folder is not provided
-    folder2 = "NewFolder"
-    if not os.path.isdir(folder2):
-        print(f"Creating new folder: {folder2}")
-        os.makedirs(folder2)
-    print(f"Folder2: {folder2}")
+    output_folder = "NewFolder"
+    if not os.path.isdir(output_folder):
+        print(f"Creating new folder: {output_folder}")
+        os.makedirs(output_folder)
+    print(f"output_folder: {output_folder}")
 
 
 # 3 loop through fist folder then convert to png and add them to the new folder
@@ -44,6 +44,6 @@ for file_name in os.listdir(input_folder):
         image = Image.open(os.path.join(input_folder, file_name))
 
         new_filename = os.path.splitext(file_name)[0] + '.png'
-        image.save(os.path.join(folder2, new_filename))
+        image.save(os.path.join(output_folder, new_filename))
 
 #  python3 JPGtoPNGconverter.py Pokedex
