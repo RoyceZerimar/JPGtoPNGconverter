@@ -1,18 +1,41 @@
-# JPNtoPNGconverter
-The JPNtoPNGconverter is a Python script that converts JPG files to PNG format. It takes command-line arguments to specify the input and output folders.
+# JPG to PNG Converter
 
-Here's how the program works:
+## Overview
 
-It first checks the number of command-line arguments. If there are more than three arguments, it prints an error message and exits. If there are fewer than two arguments, it also prints an error message and exits.
+This Python script converts images in JPG format to PNG format. It provides a command-line interface for specifying input and output folders.
 
-The input folder is assigned to the variable input_folder, which is the first command-line argument provided. If the input folder does not exist, an error message is printed, and the program exits. Otherwise, the path of the input folder is displayed.
+### Usage
 
-If a second folder is provided as a command-line argument, it is assigned to the variable output_folder. If the output folder does not exist, a new folder with the provided name is created. The path of the output folder is then displayed.
+To use the JPG to PNG Converter, follow these steps:
 
-If only one folder is provided as a command-line argument, a default output folder named "NewFolder" is created if it doesn't already exist. The path of the output folder is displayed.
+1. Clone the repository:
 
-The program loops through the files in the input folder. If a file has the ".jpg" extension, it opens the image using the PIL library. The file extension is then changed to ".png" by using the os.path.splitext() function, and the image is saved in the output folder with the new file name.
+```bash
+git clone https://github.com/your_username/jpg-to-png-converter.git
+```
 
-To run the program in the terminal, the command should be: python3 JPGtoPNGconverter.py <input_folder> <output_folder>
+2. Navigate to the project directory:
 
-Please note that the program assumes that the necessary Python libraries (sys, os, and PIL) are installed before running it.
+```bash
+cd jpg-to-png-converter
+```
+
+3. Run the script:
+
+```bash
+python JPGtoPNGconverter.py input_folder [output_folder]
+```
+
+Replace `input_folder` with the path to the folder containing JPG images you want to convert. Optionally, you can specify `output_folder` as the destination folder for the converted PNG images. If `output_folder` is not provided, a new folder named "NewFolder" will be created in the current directory to store the converted images.
+
+### Example
+
+Convert JPG images in a folder named "Pokedex" to PNG format and save them in a folder named "ImageFolder":
+
+```bash
+python JPGtoPNGconverter.py Pokedex ImageFolder
+```
+
+## Contributing
+
+Contributions are welcome! If you have any suggestions, bug reports, or feature requests, please open an issue or submit a pull request.
