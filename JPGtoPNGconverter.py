@@ -2,8 +2,7 @@ import sys
 import os
 from PIL import Image
 
-# 1grab the first and second file
-
+# grab the first and second file
 if len(sys.argv) > 3:
     print("Please provide no more than two folders as command-line arguments")
     sys.exit(1)
@@ -37,8 +36,7 @@ elif len(sys.argv) == 2:  # creating a new folder if a second folder is not prov
     print(f"output_folder: {output_folder}")
 
 
-# 3 loop through fist folder then convert to png and add them to the new folder
-
+# loop through fist folder then convert to png and add them to the new folder
 for file_name in os.listdir(input_folder):
     if file_name.endswith(".jpg"):
         image = Image.open(os.path.join(input_folder, file_name))
@@ -46,4 +44,3 @@ for file_name in os.listdir(input_folder):
         new_filename = os.path.splitext(file_name)[0] + '.png'
         image.save(os.path.join(output_folder, new_filename))
 
-#  use this line to run the program in the termina:  python3 JPGtoPNGconverter.py Pokedex ImageFolder
